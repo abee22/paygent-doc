@@ -1,0 +1,3106 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="From cost visibility to cost control — in one SDK.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.paygent.to/reference/sdk-reference/">
+      
+      
+        <link rel="prev" href="../../integration/streaming/">
+      
+      
+        <link rel="next" href="../api-reference/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>SDK API - Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sdk-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Docs" class="md-header__button md-logo" aria-label="Docs" data-md-component="logo">
+      
+  <img src="../../assets/paygent-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SDK API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abee22/paygent" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Docs" class="md-nav__button md-logo" aria-label="Docs" data-md-component="logo">
+      
+  <img src="../../assets/paygent-logo.png" alt="logo">
+
+    </a>
+    Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abee22/paygent" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Introduction
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/what-is-paygent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What is Paygent?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/who-should-use-paygent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Who should use Paygent?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/why-ai-cost-control-is-different/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why AI cost control is different
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/plans-and-usage-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plans and Usage Events
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/configure-first-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configure your first Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/assign-users-to-plans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assign users to plans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/cost-guardrails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cost Guardrails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/verify-its-working/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verify it's working
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/callbacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Callbacks & Events
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LangChain & CrewAI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/streaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Streaming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDK API
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDK API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifecycle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lifecycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paygentinit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paygent.init(...)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paygentget_instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paygent.get_instance()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pginstrument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.instrument()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pguninstrument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.uninstrument()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgflush" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.flush()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgshutdowntimeout100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.shutdown(timeout=10.0)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metering
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Metering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pgwrapcall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.wrap(call, ...)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgawrapcall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.awrap(call, ...)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgtrack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.track(...)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guard-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guard checks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Guard checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pgcheck_guarduser_id-modelnone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.check_guard(user_id, model=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgis_within_limituser_id-modelnone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.is_within_limit(user_id, model=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgget_remaining_budgetuser_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.get_remaining_budget(user_id)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgget_max_tokensuser_id-model-estimated_input_tokens0-messagesnone-hard_cap4096" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.get_max_tokens(user_id, model, *, estimated_input_tokens=0, messages=None, hard_cap=4096)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-state-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User state &amp; usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User state &amp; usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pgget_usageuser_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.get_usage(user_id)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgget_model_usageuser_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.get_model_usage(user_id)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgget_user_stateuser_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.get_user_state(user_id)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgrefresh_useruser_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.refresh_user(user_id)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgreset_useruser_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.reset_user(user_id)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Callbacks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Callbacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pgon_soft_gatecallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.on_soft_gate(callback)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgon_hard_gatecallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.on_hard_gate(callback)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgon_usagecallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.on_usage(callback)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgon_session_startcallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.on_session_start(callback)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-only-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local-only mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Local-only mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pgconfigure_planplan_name-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.configure_plan(plan_name, config)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgassign_planuser_id-plan-billing_periodnone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.assign_plan(user_id, plan, billing_period=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgstart_sessionuser_id-plandefault-plan_confignone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.start_session(user_id, plan="default", plan_config=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-managers-decorators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context managers &amp; decorators
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Context managers &amp; decorators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paygent_context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        paygent_context(...)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paygent_track" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        paygent_track(...)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exceptions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exceptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-paygentlimitexceededexception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class PaygentLimitExceeded(Exception)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-paygentbackendunreachableuserwarning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class PaygentBackendUnreachable(UserWarning)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-paygentauthinvaliduserwarning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class PaygentAuthInvalid(UserWarning)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Models
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-planconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class PlanConfig
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-modelcostrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class ModelCostRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-modellimitconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class ModelLimitConfig
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-guardresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class GuardResult
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-usageevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class UsageEvent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-currentusage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class CurrentUsage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-modelusage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class ModelUsage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-userstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class UserState
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-billingperiod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class BillingPeriod
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-budgetremaining" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class BudgetRemaining
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-maxtokensadvice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class MaxTokensAdvice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#framework-integrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Framework integrations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Framework integrations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-langchaincallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class LangChainCallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-crewaicallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class CrewAICallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifecycle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lifecycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paygentinit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paygent.init(...)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paygentget_instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paygent.get_instance()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pginstrument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.instrument()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pguninstrument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.uninstrument()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgflush" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.flush()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgshutdowntimeout100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.shutdown(timeout=10.0)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metering
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Metering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pgwrapcall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.wrap(call, ...)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgawrapcall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.awrap(call, ...)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgtrack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.track(...)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guard-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guard checks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Guard checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pgcheck_guarduser_id-modelnone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.check_guard(user_id, model=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgis_within_limituser_id-modelnone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.is_within_limit(user_id, model=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgget_remaining_budgetuser_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.get_remaining_budget(user_id)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgget_max_tokensuser_id-model-estimated_input_tokens0-messagesnone-hard_cap4096" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.get_max_tokens(user_id, model, *, estimated_input_tokens=0, messages=None, hard_cap=4096)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-state-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User state &amp; usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User state &amp; usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pgget_usageuser_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.get_usage(user_id)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgget_model_usageuser_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.get_model_usage(user_id)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgget_user_stateuser_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.get_user_state(user_id)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgrefresh_useruser_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.refresh_user(user_id)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgreset_useruser_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.reset_user(user_id)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Callbacks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Callbacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pgon_soft_gatecallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.on_soft_gate(callback)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgon_hard_gatecallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.on_hard_gate(callback)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgon_usagecallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.on_usage(callback)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgon_session_startcallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.on_session_start(callback)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-only-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local-only mode
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Local-only mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pgconfigure_planplan_name-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.configure_plan(plan_name, config)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgassign_planuser_id-plan-billing_periodnone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.assign_plan(user_id, plan, billing_period=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgstart_sessionuser_id-plandefault-plan_confignone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg.start_session(user_id, plan="default", plan_config=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-managers-decorators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context managers &amp; decorators
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Context managers &amp; decorators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paygent_context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        paygent_context(...)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paygent_track" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        paygent_track(...)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exceptions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exceptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-paygentlimitexceededexception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class PaygentLimitExceeded(Exception)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-paygentbackendunreachableuserwarning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class PaygentBackendUnreachable(UserWarning)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-paygentauthinvaliduserwarning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class PaygentAuthInvalid(UserWarning)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Models
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-planconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class PlanConfig
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-modelcostrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class ModelCostRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-modellimitconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class ModelLimitConfig
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-guardresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class GuardResult
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-usageevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class UsageEvent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-currentusage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class CurrentUsage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-modelusage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class ModelUsage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-userstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class UserState
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-billingperiod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class BillingPeriod
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-budgetremaining" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class BudgetRemaining
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-maxtokensadvice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class MaxTokensAdvice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#framework-integrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Framework integrations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Framework integrations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-langchaincallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class LangChainCallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-crewaicallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        class CrewAICallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="sdk-reference">SDK Reference</h1>
+<p>Reference for every public symbol exported from <code>paygent</code>. Anything not on this page (modules with leading <code>_</code>, internal helpers) is implementation detail and may change between minor versions.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">paygent</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Paygent</span><span class="p">,</span>
+    <span class="n">paygent_context</span><span class="p">,</span>
+    <span class="n">paygent_track</span><span class="p">,</span>
+    <span class="n">PaygentLimitExceeded</span><span class="p">,</span>
+    <span class="n">PaygentBackendUnreachable</span><span class="p">,</span>
+    <span class="n">PaygentAuthInvalid</span><span class="p">,</span>
+    <span class="n">PlanConfig</span><span class="p">,</span>
+    <span class="n">ModelCostRate</span><span class="p">,</span>
+    <span class="n">ModelLimitConfig</span><span class="p">,</span>
+    <span class="n">GuardResult</span><span class="p">,</span>
+    <span class="n">UsageEvent</span><span class="p">,</span>
+    <span class="n">CurrentUsage</span><span class="p">,</span>
+    <span class="n">ModelUsage</span><span class="p">,</span>
+    <span class="n">UserState</span><span class="p">,</span>
+    <span class="n">BudgetRemaining</span><span class="p">,</span>
+    <span class="n">MaxTokensAdvice</span><span class="p">,</span>
+    <span class="n">BillingPeriod</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">paygent.integrations</span><span class="w"> </span><span class="kn">import</span> <span class="n">LangChainCallback</span><span class="p">,</span> <span class="n">CrewAICallback</span>
+</code></pre></div>
+<p>Everything below is grouped by purpose. Methods beginning with <code>pg.</code> are bound to the <code>Paygent</code> instance returned by <code>Paygent.init()</code>. Methods beginning with <code>Paygent.</code> are class-level.</p>
+<hr />
+<h2 id="lifecycle">Lifecycle</h2>
+<p>Setup, teardown, and event-queue control. Every app calls these.</p>
+<h3 id="paygentinit">Paygent.init(...)</h3>
+<div class="highlight"><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">init</span><span class="p">(</span>
+    <span class="bp">cls</span><span class="p">,</span>
+    <span class="n">api_key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">base_url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">db_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">flush_interval</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">5.0</span><span class="p">,</span>
+    <span class="n">max_batch_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="n">max_queue_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10_000</span><span class="p">,</span>
+    <span class="n">raise_on_hard_gate</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">auto_instrument</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">registry</span><span class="p">:</span> <span class="n">ProviderRegistry</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">refresh_interval</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">60.0</span><span class="p">,</span>
+    <span class="n">strict_backend</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Paygent</span>
+</code></pre></div>
+<p>Creates and initializes the Paygent singleton. If a previous instance exists, it's shut down first.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>api_key</code></td>
+<td><code>None</code></td>
+<td>Backend API key. <code>None</code> → local-only mode. Read from <code>PAYGENT_API_KEY</code> env var if you don't pass it.</td>
+</tr>
+<tr>
+<td><code>base_url</code></td>
+<td><code>https://api.paygent.to</code></td>
+<td>Backend URL. Override via <code>PAYGENT_BASE_URL</code> env var.</td>
+</tr>
+<tr>
+<td><code>db_path</code></td>
+<td><code>~/.paygent/local.db</code></td>
+<td>Local SQLite path.</td>
+</tr>
+<tr>
+<td><code>flush_interval</code></td>
+<td><code>5.0</code></td>
+<td>Seconds between background event-queue flushes.</td>
+</tr>
+<tr>
+<td><code>max_batch_size</code></td>
+<td><code>100</code></td>
+<td>Max events per flush batch.</td>
+</tr>
+<tr>
+<td><code>max_queue_size</code></td>
+<td><code>10_000</code></td>
+<td>Max queue depth before events get dropped.</td>
+</tr>
+<tr>
+<td><code>raise_on_hard_gate</code></td>
+<td><code>True</code></td>
+<td>If False, hard-gated calls execute (callbacks still fire).</td>
+</tr>
+<tr>
+<td><code>auto_instrument</code></td>
+<td><code>True</code></td>
+<td>Whether to monkey-patch OpenAI / Anthropic at init.</td>
+</tr>
+<tr>
+<td><code>registry</code></td>
+<td><code>None</code></td>
+<td>Custom <code>ProviderRegistry</code>. Defaults to OpenAI + Anthropic.</td>
+</tr>
+<tr>
+<td><code>refresh_interval</code></td>
+<td><code>60.0</code></td>
+<td>Seconds between background <code>UserState</code> refreshes from backend.</td>
+</tr>
+<tr>
+<td><code>strict_backend</code></td>
+<td><code>False</code></td>
+<td>If True, raise on init when backend is unreachable / API key invalid (instead of warning).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> the <code>Paygent</code> singleton.</p>
+<div class="highlight"><pre><span></span><code><span class="n">pg</span> <span class="o">=</span> <span class="n">Paygent</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PAYGENT_API_KEY&quot;</span><span class="p">])</span>
+</code></pre></div>
+<hr />
+<h3 id="paygentget_instance">Paygent.get_instance()</h3>
+<div class="highlight"><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_instance</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Paygent</span> <span class="o">|</span> <span class="kc">None</span>
+</code></pre></div>
+<p>Returns the current singleton, or <code>None</code> if <code>init()</code> hasn't been called.</p>
+<hr />
+<h3 id="pginstrument">pg.instrument()</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">instrument</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</code></pre></div>
+<p>Manually patch LLM providers. Only needed if <code>auto_instrument=False</code> was passed to <code>init()</code>. Returns the list of patch keys applied.</p>
+<hr />
+<h3 id="pguninstrument">pg.uninstrument()</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">uninstrument</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span>
+</code></pre></div>
+<p>Remove all monkey-patches. Returns the number of patches restored.</p>
+<hr />
+<h3 id="pgflush">pg.flush()</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">flush</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span>
+</code></pre></div>
+<p>Force a synchronous flush of the event queue. Returns the number of events flushed.</p>
+<div class="highlight"><pre><span></span><code><span class="n">pg</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>   <span class="c1"># ensure backend is up to date before next read</span>
+</code></pre></div>
+<hr />
+<h3 id="pgshutdowntimeout100">pg.shutdown(timeout=10.0)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">shutdown</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</code></pre></div>
+<p>Graceful shutdown. Restores patches, flushes events, syncs unsynced events to the backend, closes connections.</p>
+<p>Called automatically via <code>atexit</code>, but you can call it explicitly in tests or short-lived scripts.</p>
+<hr />
+<h3 id="properties">Properties</h3>
+<p>Read-only state on the Paygent instance.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pg.api_key</code></td>
+<td><code>str</code> &#124; <code>None</code></td>
+<td>Configured API key.</td>
+</tr>
+<tr>
+<td><code>pg.base_url</code></td>
+<td><code>str</code></td>
+<td>Backend URL.</td>
+</tr>
+<tr>
+<td><code>pg.is_local_mode</code></td>
+<td><code>bool</code></td>
+<td>True if no API key.</td>
+</tr>
+<tr>
+<td><code>pg.is_connected</code></td>
+<td><code>bool</code></td>
+<td>True if backend is currently reachable.</td>
+</tr>
+<tr>
+<td><code>pg.backend_reachable</code></td>
+<td><code>bool</code></td>
+<td>Result of the init-time health check.</td>
+</tr>
+<tr>
+<td><code>pg.is_initialized</code></td>
+<td><code>bool</code></td>
+<td>True after <code>init()</code> completes.</td>
+</tr>
+<tr>
+<td><code>pg.is_instrumented</code></td>
+<td><code>bool</code></td>
+<td>True if monkey-patches are currently in place.</td>
+</tr>
+<tr>
+<td><code>pg.pending_events</code></td>
+<td><code>int</code></td>
+<td>Events waiting to flush.</td>
+</tr>
+<tr>
+<td><code>pg.queue_stats</code></td>
+<td><code>dict</code></td>
+<td>Event queue diagnostics.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="metering">Metering</h2>
+<p>Explicit per-call wrappers and the decorator. Use these when you'd rather not monkey-patch, or when the patcher can't see your call site.</p>
+<h3 id="pgwrapcall">pg.wrap(call, ...)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">wrap</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">call</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="n">Any</span><span class="p">],</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">metadata</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">provider</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">estimated_input_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">estimated_max_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span>
+</code></pre></div>
+<p>Explicit per-call metering. Pass a zero-arg callable that performs the LLM call.</p>
+<div class="highlight"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">pg</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span>
+    <span class="k">lambda</span><span class="p">:</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+        <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">,</span>
+        <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello&quot;</span><span class="p">}],</span>
+    <span class="p">),</span>
+    <span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;user_123&quot;</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>call</code></td>
+<td>Zero-arg callable performing the LLM call.</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td>Required. End-user identifier.</td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td>Optional. Used for guard checks and cost calc. If None, extracted from the response.</td>
+</tr>
+<tr>
+<td><code>session_id</code></td>
+<td>Optional. Override the session ID for this call.</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td>Optional. Attached to the resulting <code>UsageEvent</code>.</td>
+</tr>
+<tr>
+<td><code>provider</code></td>
+<td><code>"openai"</code> or <code>"anthropic"</code>. None → try all registered providers.</td>
+</tr>
+<tr>
+<td><code>estimated_input_tokens</code></td>
+<td>Used for the concurrent-safe reservation.</td>
+</tr>
+<tr>
+<td><code>estimated_max_tokens</code></td>
+<td>Output cap estimate. Falls back to <code>plan_config.pre_call_buffer_tokens</code>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Raises:</strong> <code>PaygentLimitExceeded</code> if a hard gate fires and <code>raise_on_hard_gate=True</code>.</p>
+<p><strong>Returns:</strong> the value returned by <code>call()</code>.</p>
+<hr />
+<h3 id="pgawrapcall">pg.awrap(call, ...)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">awrap</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">call</span><span class="p">:</span> <span class="n">Awaitable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">metadata</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">provider</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">estimated_input_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">estimated_max_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span>
+</code></pre></div>
+<p>Async version of <code>wrap()</code>. Accepts a coroutine or awaitable.</p>
+<div class="highlight"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">pg</span><span class="o">.</span><span class="n">awrap</span><span class="p">(</span>
+    <span class="n">async_client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+        <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">,</span>
+        <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello&quot;</span><span class="p">}],</span>
+    <span class="p">),</span>
+    <span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;user_123&quot;</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="pgtrack">pg.track(...)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">track</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">plan</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">metadata</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">user_id_param</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span>
+</code></pre></div>
+<p>Decorator alternative to <code>paygent_context</code>. See <a href="#paygent_track">paygent_track()</a> below — the standalone function is identical except <code>pg.track()</code> is bound to the instance.</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@pg</span><span class="o">.</span><span class="n">track</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;user_123&quot;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">handle</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="guard-checks">Guard checks</h2>
+<p>Pre-flight budget checks. None of these execute an LLM call — they answer "would the next call be allowed?"</p>
+<h3 id="pgcheck_guarduser_id-modelnone">pg.check_guard(user_id, model=None)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">check_guard</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">GuardResult</span>
+</code></pre></div>
+<p>Run the guard check manually. Returns <code>GuardResult(status="ok")</code> if no session exists. Useful for pre-flight checks.</p>
+<hr />
+<h3 id="pgis_within_limituser_id-modelnone">pg.is_within_limit(user_id, model=None)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_within_limit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
+</code></pre></div>
+<p>Convenience wrapper. Returns True unless the next call would hard-gate. Soft-gate state counts as "within limit."</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">pg</span><span class="o">.</span><span class="n">is_within_limit</span><span class="p">(</span><span class="s2">&quot;user_123&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="pgget_remaining_budgetuser_id">pg.get_remaining_budget(user_id)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_remaining_budget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BudgetRemaining</span>
+</code></pre></div>
+<p>Multi-dimensional snapshot of remaining budget. See <a href="#class-budgetremaining">BudgetRemaining</a> below.</p>
+<div class="highlight"><pre><span></span><code><span class="n">b</span> <span class="o">=</span> <span class="n">pg</span><span class="o">.</span><span class="n">get_remaining_budget</span><span class="p">(</span><span class="s2">&quot;user_123&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">period_spend_remaining</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">most_constrained</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="pgget_max_tokensuser_id-model-estimated_input_tokens0-messagesnone-hard_cap4096">pg.get_max_tokens(user_id, model, *, estimated_input_tokens=0, messages=None, hard_cap=4096)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_max_tokens</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">model</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">estimated_input_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">messages</span><span class="p">:</span> <span class="nb">list</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">hard_cap</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4096</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MaxTokensAdvice</span>
+</code></pre></div>
+<p>Recommends a <code>max_tokens</code> value that won't push the user over any hard gate.</p>
+<div class="highlight"><pre><span></span><code><span class="n">advice</span> <span class="o">=</span> <span class="n">pg</span><span class="o">.</span><span class="n">get_max_tokens</span><span class="p">(</span><span class="s2">&quot;user_123&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">,</span> <span class="n">messages</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">])</span>
+<span class="k">if</span> <span class="n">advice</span><span class="o">.</span><span class="n">max_tokens</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s2">&quot;Out of budget&quot;</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
+    <span class="n">max_tokens</span><span class="o">=</span><span class="n">advice</span><span class="o">.</span><span class="n">max_tokens</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>If <code>messages</code> is given and <code>estimated_input_tokens=0</code>, Paygent estimates input tokens internally (chars/4 heuristic).</p>
+<hr />
+<h2 id="user-state-usage">User state &amp; usage</h2>
+<p>Read-only accessors for cached state and usage counters. Use these for dashboards, debugging, or pre-call budget displays.</p>
+<h3 id="pgget_usageuser_id">pg.get_usage(user_id)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_usage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CurrentUsage</span>
+</code></pre></div>
+<p>Returns a deep-copy snapshot of the user's <code>CurrentUsage</code>. Auto-loads via the 5-step fallback chain (memory → backend → SQLite snapshot → expired snapshot → permissive defaults). Always returns a <code>CurrentUsage</code> object — never <code>None</code>.</p>
+<p>Mutating the returned object does <strong>not</strong> affect the SDK's internal state.</p>
+<div class="highlight"><pre><span></span><code><span class="n">usage</span> <span class="o">=</span> <span class="n">pg</span><span class="o">.</span><span class="n">get_usage</span><span class="p">(</span><span class="s2">&quot;user_123&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">usage</span><span class="o">.</span><span class="n">period_cost</span><span class="p">,</span> <span class="n">usage</span><span class="o">.</span><span class="n">period_tokens_total</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="pgget_model_usageuser_id">pg.get_model_usage(user_id)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_model_usage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">ModelUsage</span><span class="p">]</span>
+</code></pre></div>
+<p>Per-model breakdown. Returns one <code>ModelUsage</code> per model that either has metered usage or has a configured limit.</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">mu</span> <span class="ow">in</span> <span class="n">pg</span><span class="o">.</span><span class="n">get_model_usage</span><span class="p">(</span><span class="s2">&quot;user_123&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">mu</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">mu</span><span class="o">.</span><span class="n">tokens_used</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">mu</span><span class="o">.</span><span class="n">tokens_limit</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;$</span><span class="si">{</span><span class="n">mu</span><span class="o">.</span><span class="n">cost</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="pgget_user_stateuser_id">pg.get_user_state(user_id)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_user_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">UserState</span>
+</code></pre></div>
+<p>Returns the live cached <code>UserState</code>. Mutations affect subsequent guard checks — power-user accessor. For read-only use cases, prefer <code>get_usage()</code> / <code>get_model_usage()</code>.</p>
+<p>Auto-loads via the 5-step fallback chain. Always returns a <code>UserState</code>.</p>
+<hr />
+<h3 id="pgrefresh_useruser_id">pg.refresh_user(user_id)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">refresh_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">UserState</span>
+</code></pre></div>
+<p>Force-refresh user state from the backend. Useful after a plan change so the SDK picks up the new limits immediately rather than waiting for <code>refresh_interval</code>.</p>
+<p>Falls back to existing cached state if the backend is unreachable.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># After updating subscription via the API:</span>
+<span class="n">pg</span><span class="o">.</span><span class="n">refresh_user</span><span class="p">(</span><span class="s2">&quot;user_123&quot;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="pgreset_useruser_id">pg.reset_user(user_id)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">reset_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</code></pre></div>
+<p>Drop the user from the in-memory cache. Next call for this user re-runs the 5-step fallback chain.</p>
+<hr />
+<h2 id="callbacks">Callbacks</h2>
+<p>Register hooks that fire on gate decisions and metering events. Multiple callbacks per slot are allowed.</p>
+<h3 id="pgon_soft_gatecallback">pg.on_soft_gate(callback)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">on_soft_gate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">GuardResult</span><span class="p">],</span> <span class="kc">None</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</code></pre></div>
+<p>Register a soft-gate callback. Multiple callbacks can be registered. They fire in registration order; one throwing doesn't stop the others.</p>
+<div class="highlight"><pre><span></span><code><span class="n">pg</span><span class="o">.</span><span class="n">on_soft_gate</span><span class="p">(</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⚠ </span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))</span>
+</code></pre></div>
+<hr />
+<h3 id="pgon_hard_gatecallback">pg.on_hard_gate(callback)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">on_hard_gate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">GuardResult</span><span class="p">],</span> <span class="kc">None</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</code></pre></div>
+<p>Register a hard-gate callback. Fires <strong>before</strong> <code>PaygentLimitExceeded</code> is raised.</p>
+<hr />
+<h3 id="pgon_usagecallback">pg.on_usage(callback)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">on_usage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">UsageEvent</span><span class="p">],</span> <span class="kc">None</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</code></pre></div>
+<p>Register a callback for every successfully-metered call. Fires across all metering paths (auto-instrument, wrap, framework callbacks).</p>
+<hr />
+<h3 id="pgon_session_startcallback">pg.on_session_start(callback)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">on_session_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">UserState</span><span class="p">],</span> <span class="kc">None</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</code></pre></div>
+<p>Register a callback that fires when a <code>UserState</code> is first loaded for a user.</p>
+<hr />
+<h2 id="local-only-mode">Local-only mode</h2>
+<p>Configure plans and assign users in code, without a backend. Used in tests, development, and air-gapped environments.</p>
+<h3 id="pgconfigure_planplan_name-config">pg.configure_plan(plan_name, config)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">configure_plan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plan_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">PlanConfig</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</code></pre></div>
+<p>Register a <code>PlanConfig</code> under a name for <strong>local-only mode</strong>. In connected mode, plans live in the backend; this method is a no-op for guard purposes.</p>
+<div class="highlight"><pre><span></span><code><span class="n">pg</span><span class="o">.</span><span class="n">configure_plan</span><span class="p">(</span><span class="s2">&quot;pro&quot;</span><span class="p">,</span> <span class="n">PlanConfig</span><span class="p">(</span><span class="n">max_spend_per_period</span><span class="o">=</span><span class="mf">49.00</span><span class="p">,</span> <span class="o">...</span><span class="p">))</span>
+</code></pre></div>
+<hr />
+<h3 id="pgassign_planuser_id-plan-billing_periodnone">pg.assign_plan(user_id, plan, billing_period=None)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">assign_plan</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">plan</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">billing_period</span><span class="p">:</span> <span class="n">BillingPeriod</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">UserState</span>
+</code></pre></div>
+<p>Assigns a plan to a user. The plan must have been registered via <code>configure_plan</code>. Used in <strong>local-only mode</strong>; connected mode uses the backend's subscription endpoint.</p>
+<div class="highlight"><pre><span></span><code><span class="n">pg</span><span class="o">.</span><span class="n">assign_plan</span><span class="p">(</span><span class="s2">&quot;user_123&quot;</span><span class="p">,</span> <span class="n">plan</span><span class="o">=</span><span class="s2">&quot;pro&quot;</span><span class="p">,</span> <span class="n">billing_period</span><span class="o">=</span><span class="n">BillingPeriod</span><span class="p">(</span><span class="n">start</span><span class="o">=...</span><span class="p">,</span> <span class="n">end</span><span class="o">=...</span><span class="p">))</span>
+</code></pre></div>
+<p>If the plan is unknown, falls back to permissive defaults (no limits).</p>
+<p><strong>Returns:</strong> the <code>UserState</code> it just created or updated.</p>
+<hr />
+<h3 id="pgstart_sessionuser_id-plandefault-plan_confignone">pg.start_session(user_id, plan="default", plan_config=None)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">start_session</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">plan</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;default&quot;</span><span class="p">,</span>
+    <span class="n">plan_config</span><span class="p">:</span> <span class="n">PlanConfig</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">UserState</span>
+</code></pre></div>
+<p>Pre-warm the cache. <strong>Optional</strong> — the SDK auto-fetches on first use. Call this if you want to avoid the small latency hit on the first call.</p>
+<p>In connected mode, tries the backend first (using <code>plan_config</code> as fallback if backend is unreachable). In local mode, uses <code>plan_config</code> directly.</p>
+<hr />
+<h2 id="context-managers-decorators">Context managers &amp; decorators</h2>
+<p>Set per-request user identity so the auto-patcher can attribute calls to the right user.</p>
+<h3 id="paygent_context">paygent_context(...)</h3>
+<div class="highlight"><pre><span></span><code><span class="nd">@contextmanager</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">paygent_context</span><span class="p">(</span>
+    <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">plan</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">metadata</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Set the user context for all LLM calls within the block. The patcher reads this on every call.</p>
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">paygent_context</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;user_123&quot;</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;feature&quot;</span><span class="p">:</span> <span class="s2">&quot;summarize&quot;</span><span class="p">}):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</code></pre></div>
+<p>Works with sync code, async tasks, and threaded code (contextvars propagates correctly).</p>
+<hr />
+<h3 id="paygent_track">paygent_track(...)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">paygent_track</span><span class="p">(</span>
+    <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">plan</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">metadata</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">user_id_param</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span>
+</code></pre></div>
+<p>Decorator that wraps a function in <code>paygent_context</code>.</p>
+<p>Static user:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">paygent</span><span class="w"> </span><span class="kn">import</span> <span class="n">paygent_track</span>
+
+<span class="nd">@paygent_track</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;user_123&quot;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">handle</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</code></pre></div>
+<p>Dynamic user from a function arg:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@paygent_track</span><span class="p">(</span><span class="n">user_id_param</span><span class="o">=</span><span class="s2">&quot;user_id&quot;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">handle</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</code></pre></div>
+<p><code>pg.track(...)</code> is the instance-bound version of this.</p>
+<hr />
+<h2 id="exceptions">Exceptions</h2>
+<p>Errors and warnings the SDK can raise. Catch <code>PaygentLimitExceeded</code> in your request handlers; the two <code>UserWarning</code> subclasses are emitted at init.</p>
+<h3 id="class-paygentlimitexceededexception">class PaygentLimitExceeded(Exception)</h3>
+<p>Raised when a hard gate fires (and <code>raise_on_hard_gate=True</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">PaygentLimitExceeded</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="n">guard_result</span><span class="p">:</span> <span class="n">GuardResult</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">PaygentLimitExceeded</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">guard_result</span><span class="o">.</span><span class="n">gate_reason</span>   <span class="c1"># &quot;total_spend&quot;, &quot;model_limit:gpt-4o&quot;, ...</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">guard_result</span><span class="o">.</span><span class="n">message</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">guard_result</span><span class="o">.</span><span class="n">usage_pct</span>
+</code></pre></div>
+<hr />
+<h3 id="class-paygentbackendunreachableuserwarning">class PaygentBackendUnreachable(UserWarning)</h3>
+<p>Emitted at <code>init()</code> when the backend is unreachable. With <code>strict_backend=True</code>, raised instead.</p>
+<hr />
+<h3 id="class-paygentauthinvaliduserwarning">class PaygentAuthInvalid(UserWarning)</h3>
+<p>Emitted at <code>init()</code> when the backend rejects the API key (401/403). With <code>strict_backend=True</code>, raised instead.</p>
+<hr />
+<h2 id="models">Models</h2>
+<p>Pydantic v2 models. All fields shown are public.</p>
+<h3 id="class-planconfig">class PlanConfig</h3>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">PlanConfig</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">max_spend_per_period</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
+    <span class="n">max_spend_per_session</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
+    <span class="n">soft_gate_at</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.80</span>
+    <span class="n">hard_gate_at</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.00</span>
+    <span class="n">model_limits</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">ModelLimitConfig</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">cost_rates</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">ModelCostRate</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">default_cost_rate</span><span class="p">:</span> <span class="n">ModelCostRate</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">tool_costs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">default_tool_cost</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.02</span>
+    <span class="n">session_timeout_minutes</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">30.0</span>
+    <span class="n">pre_call_estimate</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">pre_call_buffer_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4096</span>
+    <span class="n">reservation_safety_factor</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.2</span>
+</code></pre></div>
+<p>See <a href="../../getting-started/configure-first-plan/">Configure your first plan</a> for the field-by-field walkthrough.</p>
+<hr />
+<h3 id="class-modelcostrate">class ModelCostRate</h3>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ModelCostRate</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="nb">float</span>    <span class="c1"># cost per 1K input tokens</span>
+    <span class="n">output</span><span class="p">:</span> <span class="nb">float</span>   <span class="c1"># cost per 1K output tokens</span>
+</code></pre></div>
+<hr />
+<h3 id="class-modellimitconfig">class ModelLimitConfig</h3>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ModelLimitConfig</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">max_tokens_per_period</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>   <span class="c1"># None = unlimited</span>
+</code></pre></div>
+<hr />
+<h3 id="class-guardresult">class GuardResult</h3>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">GuardResult</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">status</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;ok&quot;</span><span class="p">,</span> <span class="s2">&quot;soft_gate&quot;</span><span class="p">,</span> <span class="s2">&quot;hard_gate&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;ok&quot;</span>
+    <span class="n">gate_reason</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">usage_pct</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">current_value</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">limit_value</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></div>
+<p><code>gate_reason</code> values: <code>"total_spend"</code>, <code>"session_spend"</code>, <code>"model_limit:&lt;model&gt;"</code>.</p>
+<hr />
+<h3 id="class-usageevent">class UsageEvent</h3>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">UsageEvent</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span>                          <span class="c1"># UUID, idempotency key</span>
+    <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">timestamp</span><span class="p">:</span> <span class="n">datetime</span>
+    <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">input_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">output_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">total_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">tool_calls</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">cost_tokens</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">cost_tools</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">cost_total</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">metadata</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">synced</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+</code></pre></div>
+<hr />
+<h3 id="class-currentusage">class CurrentUsage</h3>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">CurrentUsage</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">period_cost</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">session_cost</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">session_started_at</span><span class="p">:</span> <span class="n">datetime</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">period_tokens_total</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">period_tokens_by_model</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">period_cost_by_model</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">reserved_cost</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">reserved_tokens_by_model</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+</code></pre></div>
+<hr />
+<h3 id="class-modelusage">class ModelUsage</h3>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ModelUsage</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">model</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">tokens_used</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">tokens_limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>   <span class="c1"># None = unlimited</span>
+    <span class="n">cost</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+</code></pre></div>
+<hr />
+<h3 id="class-userstate">class UserState</h3>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">UserState</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">paygent_user_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">plan</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">sdk_enabled</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">plan_config</span><span class="p">:</span> <span class="n">PlanConfig</span>
+    <span class="n">current_usage</span><span class="p">:</span> <span class="n">CurrentUsage</span>
+    <span class="n">billing_period</span><span class="p">:</span> <span class="n">BillingPeriod</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">last_refreshed</span><span class="p">:</span> <span class="n">datetime</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></div>
+<p><code>UserSession</code> is a deprecated alias for <code>UserState</code>.</p>
+<hr />
+<h3 id="class-billingperiod">class BillingPeriod</h3>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">BillingPeriod</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">start</span><span class="p">:</span> <span class="n">datetime</span>
+    <span class="n">end</span><span class="p">:</span> <span class="n">datetime</span>
+</code></pre></div>
+<hr />
+<h3 id="class-budgetremaining">class BudgetRemaining</h3>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">BudgetRemaining</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">period_spend_remaining</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
+    <span class="n">session_spend_remaining</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
+    <span class="n">model_tokens_remaining</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">most_constrained</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span>
+        <span class="s2">&quot;period_spend&quot;</span><span class="p">,</span> <span class="s2">&quot;session_spend&quot;</span><span class="p">,</span> <span class="s2">&quot;model_tokens&quot;</span><span class="p">,</span> <span class="s2">&quot;unbounded&quot;</span>
+    <span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;unbounded&quot;</span>
+</code></pre></div>
+<p><code>model_tokens_remaining</code> only includes models with a configured <code>max_tokens_per_period</code>. Unlimited per-model entries appear as <code>None</code>.</p>
+<hr />
+<h3 id="class-maxtokensadvice">class MaxTokensAdvice</h3>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MaxTokensAdvice</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">max_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">binding_limit</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span>
+        <span class="s2">&quot;period_spend&quot;</span><span class="p">,</span> <span class="s2">&quot;session_spend&quot;</span><span class="p">,</span> <span class="s2">&quot;model_tokens&quot;</span><span class="p">,</span> <span class="s2">&quot;unbounded&quot;</span><span class="p">,</span> <span class="s2">&quot;blocked&quot;</span>
+    <span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;unbounded&quot;</span>
+    <span class="n">period_spend_remaining</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
+    <span class="n">session_spend_remaining</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
+    <span class="n">model_tokens_remaining</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></div>
+<p><code>max_tokens == 0</code> and <code>binding_limit == "blocked"</code> means don't make the call — the user is already over a hard gate.</p>
+<hr />
+<h2 id="framework-integrations">Framework integrations</h2>
+<p>Drop-in callback classes for LangChain and CrewAI. See <a href="../../integration/frameworks/">LangChain &amp; CrewAI</a> for usage walkthroughs.</p>
+<h3 id="class-langchaincallback">class LangChainCallback</h3>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">LangChainCallback</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">pg</span><span class="p">:</span> <span class="n">Paygent</span><span class="p">,</span>
+        <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">metadata</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</code></pre></div>
+<p>LangChain callback handler. Passes the resulting <code>UsageEvent</code> through Paygent's normal flow.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">paygent.integrations</span><span class="w"> </span><span class="kn">import</span> <span class="n">LangChainCallback</span>
+
+<span class="n">cb</span> <span class="o">=</span> <span class="n">LangChainCallback</span><span class="p">(</span><span class="n">pg</span><span class="p">,</span> <span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;user_123&quot;</span><span class="p">)</span>
+<span class="n">chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="o">...</span><span class="p">},</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;callbacks&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">cb</span><span class="p">]})</span>
+</code></pre></div>
+<p>De-dup: if <code>auto_instrument=True</code> AND a <code>paygent_context</code> is set, this callback skips itself (the patcher will meter).</p>
+<hr />
+<h3 id="class-crewaicallback">class CrewAICallback</h3>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">CrewAICallback</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">pg</span><span class="p">:</span> <span class="n">Paygent</span><span class="p">,</span>
+        <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">metadata</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step_output</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="o">...</span>
+</code></pre></div>
+<p>CrewAI step callback. Pass the instance to <code>Crew(..., step_callback=cb)</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">paygent.integrations</span><span class="w"> </span><span class="kn">import</span> <span class="n">CrewAICallback</span>
+
+<span class="n">cb</span> <span class="o">=</span> <span class="n">CrewAICallback</span><span class="p">(</span><span class="n">pg</span><span class="p">,</span> <span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;user_123&quot;</span><span class="p">)</span>
+<span class="n">crew</span> <span class="o">=</span> <span class="n">Crew</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">step_callback</span><span class="o">=</span><span class="n">cb</span><span class="p">)</span>
+<span class="n">crew</span><span class="o">.</span><span class="n">kickoff</span><span class="p">()</span>
+</code></pre></div>
+<p>Same de-dup semantics as <code>LangChainCallback</code>.</p>
+<hr />
+<h2 id="next-steps">Next steps</h2>
+<ul>
+<li><a href="../api-reference/">Backend API Reference</a> — what the SDK calls underneath</li>
+<li><a href="../../getting-started/cost-guardrails/">Cost Guardrails</a> — how it all fits together</li>
+<li><a href="../troubleshooting/">Troubleshooting</a> — when it doesn't</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.indexes", "navigation.expand", "navigation.top", "content.code.copy", "content.code.annotate", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2585 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="From cost visibility to cost control — in one SDK.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.paygent.to/reference/api-reference/">
+      
+      
+        <link rel="prev" href="../sdk-reference/">
+      
+      
+        <link rel="next" href="../troubleshooting/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Backend API - Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#backend-api-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Docs" class="md-header__button md-logo" aria-label="Docs" data-md-component="logo">
+      
+  <img src="../../assets/paygent-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Backend API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abee22/paygent" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Docs" class="md-nav__button md-logo" aria-label="Docs" data-md-component="logo">
+      
+  <img src="../../assets/paygent-logo.png" alt="logo">
+
+    </a>
+    Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abee22/paygent" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Introduction
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/what-is-paygent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What is Paygent?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/who-should-use-paygent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Who should use Paygent?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/why-ai-cost-control-is-different/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why AI cost control is different
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/plans-and-usage-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plans and Usage Events
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/configure-first-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configure your first Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/assign-users-to-plans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assign users to plans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/cost-guardrails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cost Guardrails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/verify-its-working/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verify it's working
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/callbacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Callbacks & Events
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LangChain & CrewAI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/streaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Streaming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdk-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDK API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend API
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#products" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Products
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Products">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /products
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /products
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Config
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-configplans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /config/plans
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-configplans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /config/plans
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-configplansplan_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PATCH /config/plans/{plan_id}
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Users
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Users">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /users
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-usersuser_idsubscription" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /users/{user_id}/subscription
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-usersuser_idsession" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /users/{user_id}/session
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-usersuser_idusage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /users/{user_id}/usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-eventsbatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /events/batch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gate-events-audit-trail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gate events (audit trail)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gate events (audit trail)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-gate-eventsbatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /gate-events/batch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-usersuser_idgate-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /users/{user_id}/gate-events
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#health" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Health
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Health">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /health
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error responses
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#products" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Products
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Products">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /products
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /products
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Config
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-configplans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /config/plans
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-configplans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /config/plans
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-configplansplan_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PATCH /config/plans/{plan_id}
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Users
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Users">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /users
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-usersuser_idsubscription" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /users/{user_id}/subscription
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-usersuser_idsession" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /users/{user_id}/session
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-usersuser_idusage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /users/{user_id}/usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-eventsbatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /events/batch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gate-events-audit-trail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gate events (audit trail)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gate events (audit trail)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-gate-eventsbatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /gate-events/batch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-usersuser_idgate-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /users/{user_id}/gate-events
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#health" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Health
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Health">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /health
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error responses
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="backend-api-reference">Backend API Reference</h1>
+<p>The Paygent backend exposes a small REST API. The SDK uses it. You also call it directly to manage plans, users, and subscriptions.</p>
+<p><strong>Base URL:</strong> <code>https://api.paygent.to/api/v1</code></p>
+<p><strong>Authentication:</strong> Bearer token in <code>Authorization: Bearer pg_live_...</code> header. The product creation endpoint (<code>POST /products</code>) is the only exception — it's how you mint the first key.</p>
+<p><strong>Content type:</strong> <code>application/json</code> for all request and response bodies.</p>
+<hr />
+<h2 id="products">Products</h2>
+<h3 id="post-products">POST /products</h3>
+<p>Create a new product (tenant). Returns the API key — exactly once. <strong>No authentication required.</strong></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label><label for="__tabbed_1_2">curl</label><label for="__tabbed_1_3">TypeScript</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">httpx</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s2">&quot;https://api.paygent.to/api/v1/products&quot;</span><span class="p">,</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;MyAgent&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;contact_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Jane Developer&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;contact_email&quot;</span><span class="p">:</span> <span class="s2">&quot;jane@example.com&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://api.paygent.to/api/v1/products<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;name&quot;: &quot;MyAgent&quot;,</span>
+<span class="s1">    &quot;contact_name&quot;: &quot;Jane Developer&quot;,</span>
+<span class="s1">    &quot;contact_email&quot;: &quot;jane@example.com&quot;</span>
+<span class="s1">  }&#39;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1">// Coming soon</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><strong>Request body:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MyAgent&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;contact_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jane Developer&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;contact_email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jane@example.com&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string (1–255)</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>contact_name</code></td>
+<td>string &#124; null</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>contact_email</code></td>
+<td>string &#124; null</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response (201):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;550e8400-e29b-41d4-a716-446655440000&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MyAgent&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;slug&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myagent&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;contact_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jane Developer&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;contact_email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jane@example.com&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-05-06T12:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;api_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pg_live_AbCd1234...&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>api_key</code> is returned <strong>only on creation</strong>. Store it before discarding the response.</p>
+<hr />
+<h3 id="get-products">GET /products</h3>
+<p>List products for the authenticated key.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Python</label><label for="__tabbed_2_2">curl</label><label for="__tabbed_2_3">TypeScript</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">r</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s2">&quot;https://api.paygent.to/api/v1/products&quot;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">api_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>https://api.paygent.to/api/v1/products<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer pg_live_...&quot;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1">// Coming soon</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><strong>Response (200):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;550e8400-e29b-41d4-a716-446655440000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MyAgent&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;slug&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myagent&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;contact_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jane Developer&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;contact_email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jane@example.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-05-06T12:00:00Z&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+<p>API keys are <strong>not</strong> included.</p>
+<hr />
+<h2 id="config">Config</h2>
+<h3 id="post-configplans">POST /config/plans</h3>
+<p>Create plan configurations.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Python</label><label for="__tabbed_3_2">curl</label><label for="__tabbed_3_3">TypeScript</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">body</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;soft_gate_at&quot;</span><span class="p">:</span> <span class="mf">0.80</span><span class="p">,</span>
+    <span class="s2">&quot;hard_gate_at&quot;</span><span class="p">:</span> <span class="mf">1.00</span><span class="p">,</span>
+    <span class="s2">&quot;plans&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;pro&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;max_spend_per_period&quot;</span><span class="p">:</span> <span class="mf">49.00</span><span class="p">,</span>
+            <span class="s2">&quot;max_spend_per_session&quot;</span><span class="p">:</span> <span class="mf">5.00</span><span class="p">,</span>
+            <span class="s2">&quot;session_timeout_minutes&quot;</span><span class="p">:</span> <span class="mf">30.0</span><span class="p">,</span>
+            <span class="s2">&quot;model_limits&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;gpt-4o&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;max_tokens_per_period&quot;</span><span class="p">:</span> <span class="mi">50000</span><span class="p">},</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;cost_rates&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;gpt-4o&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="mf">0.0025</span><span class="p">,</span> <span class="s2">&quot;output&quot;</span><span class="p">:</span> <span class="mf">0.010</span><span class="p">},</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;default_cost_rate&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="mf">0.001</span><span class="p">,</span> <span class="s2">&quot;output&quot;</span><span class="p">:</span> <span class="mf">0.003</span><span class="p">},</span>
+            <span class="s2">&quot;tool_costs&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;search&quot;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">},</span>
+            <span class="s2">&quot;default_tool_cost&quot;</span><span class="p">:</span> <span class="mf">0.02</span><span class="p">,</span>
+            <span class="s2">&quot;pre_call_estimate&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s2">&quot;pre_call_buffer_tokens&quot;</span><span class="p">:</span> <span class="mi">4096</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+<span class="p">}</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s2">&quot;https://api.paygent.to/api/v1/config/plans&quot;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">api_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span>
+    <span class="n">json</span><span class="o">=</span><span class="n">body</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://api.paygent.to/api/v1/config/plans<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer pg_live_...&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span>@plans.json
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1">// Coming soon</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><strong>Request body:</strong> see <a href="../../getting-started/configure-first-plan/">Configure your first plan</a> for the field-by-field walkthrough.</p>
+<p><strong>Response (201):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;plans&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;abc-uuid&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pro&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;max_spend_per_period&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">49.00</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;max_spend_per_session&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.00</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;soft_gate_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.80</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;hard_gate_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.00</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;cost_rates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;default_cost_rate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;tool_costs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;default_tool_cost&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.02</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;model_limits&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;session_timeout_minutes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">30.0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;pre_call_estimate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;pre_call_buffer_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4096</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;updated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;duplicates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>duplicates</code> lists names that already exist for this product (skipped, not updated). Use <code>PATCH</code> to modify existing plans.</p>
+<p><strong>Errors:</strong> <code>409 Conflict</code> if every plan in the request was a duplicate.</p>
+<hr />
+<h3 id="get-configplans">GET /config/plans</h3>
+<p>List all plans for this product.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Python</label><label for="__tabbed_4_2">curl</label><label for="__tabbed_4_3">TypeScript</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">r</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s2">&quot;https://api.paygent.to/api/v1/config/plans&quot;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">api_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>https://api.paygent.to/api/v1/config/plans<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer pg_live_...&quot;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1">// Coming soon</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><strong>Response (200):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;plans&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;free&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pro&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Same <code>PlanResponse</code> shape as <code>POST /config/plans</code>.</p>
+<hr />
+<h3 id="patch-configplansplan_id">PATCH /config/plans/{plan_id}</h3>
+<p>Partial update of a single plan. Only fields in the body are changed.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Python</label><label for="__tabbed_5_2">curl</label><label for="__tabbed_5_3">TypeScript</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">r</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;https://api.paygent.to/api/v1/config/plans/</span><span class="si">{</span><span class="n">plan_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">api_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;max_spend_per_period&quot;</span><span class="p">:</span> <span class="mf">79.00</span><span class="p">,</span>
+        <span class="s2">&quot;model_limits&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;gpt-4o&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;max_tokens_per_period&quot;</span><span class="p">:</span> <span class="mi">80000</span><span class="p">},</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>PATCH<span class="w"> </span>https://api.paygent.to/api/v1/config/plans/<span class="nv">$PLAN_ID</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer pg_live_...&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;max_spend_per_period&quot;: 79.00}&#39;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1">// Coming soon</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><strong>Request body:</strong> any subset of <code>PlanSchema</code> fields.</p>
+<p><strong>Response (200):</strong> the updated <code>PlanResponse</code>.</p>
+<p><strong>Errors:</strong> <code>404 Not Found</code> if no plan with that id exists for this product.</p>
+<hr />
+<h2 id="users">Users</h2>
+<h3 id="post-users">POST /users</h3>
+<p>Create a user.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Python</label><label for="__tabbed_6_2">curl</label><label for="__tabbed_6_3">TypeScript</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">r</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s2">&quot;https://api.paygent.to/api/v1/users&quot;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">api_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;external_user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;user_123&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://api.paygent.to/api/v1/users<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer pg_live_...&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;external_user_id&quot;: &quot;user_123&quot;, &quot;name&quot;: &quot;Alice&quot;}&#39;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1">// Coming soon</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><strong>Request body:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>external_user_id</code></td>
+<td>string (1–255)</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>string &#124; null</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response (201):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;550e8400-e29b-41d4-a716-446655440000&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;external_user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user_123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;plan_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;stripe_subscription_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-05-06T12:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;updated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-05-06T12:00:00Z&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Errors:</strong> <code>409 Conflict</code> if <code>external_user_id</code> already exists for this product.</p>
+<hr />
+<h3 id="post-usersuser_idsubscription">POST /users/{user_id}/subscription</h3>
+<p>Update a user's plan. Call this after your own checkout flow succeeds. <code>user_id</code> here is the <code>external_user_id</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Python</label><label for="__tabbed_7_2">curl</label><label for="__tabbed_7_3">TypeScript</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span><span class="p">,</span> <span class="n">timezone</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;https://api.paygent.to/api/v1/users/user_123/subscription&quot;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">api_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;plan_id&quot;</span><span class="p">:</span> <span class="s2">&quot;pro-plan-uuid&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;stripe_subscription_id&quot;</span><span class="p">:</span> <span class="s2">&quot;sub_1OabCDeFghIJ&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;period_start&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
+        <span class="s2">&quot;period_end&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">30</span><span class="p">))</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://api.paygent.to/api/v1/users/user_123/subscription<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer pg_live_...&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;plan_id&quot;: &quot;pro-plan-uuid&quot;,</span>
+<span class="s1">    &quot;period_start&quot;: &quot;2026-05-01T00:00:00Z&quot;,</span>
+<span class="s1">    &quot;period_end&quot;: &quot;2026-06-01T00:00:00Z&quot;</span>
+<span class="s1">  }&#39;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1">// Coming soon</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><strong>Request body:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>plan_id</code></td>
+<td>UUID</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>stripe_subscription_id</code></td>
+<td>string &#124; null</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>period_start</code></td>
+<td>ISO datetime &#124; null</td>
+<td>conditional</td>
+</tr>
+<tr>
+<td><code>period_end</code></td>
+<td>ISO datetime &#124; null</td>
+<td>conditional</td>
+</tr>
+</tbody>
+</table>
+<p><code>period_start</code> and <code>period_end</code> are <strong>required</strong> when the assigned plan has a finite <code>max_spend_per_period</code>.</p>
+<p><strong>Response (200):</strong> updated <code>UserResponse</code> with <code>plan_name</code> populated.</p>
+<p><strong>Errors:</strong></p>
+<ul>
+<li><code>400 Bad Request</code> — period dates missing or invalid window</li>
+<li><code>404 Not Found</code> — user or plan doesn't exist</li>
+</ul>
+<hr />
+<h3 id="get-usersuser_idsession">GET /users/{user_id}/session</h3>
+<p>SDK's session-bootstrap endpoint. Returns plan config, current usage, and billing period for the user. Most apps don't call this directly — the SDK does.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Python</label><label for="__tabbed_8_2">curl</label><label for="__tabbed_8_3">TypeScript</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">r</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;https://api.paygent.to/api/v1/users/user_123/session&quot;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">api_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>https://api.paygent.to/api/v1/users/user_123/session<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer pg_live_...&quot;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1">// Coming soon</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><strong>Response (200):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user_123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;paygent_user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;550e8400-e29b-41d4-a716-446655440000&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;plan&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pro&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;sdk_enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;plan_config&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;max_spend_per_period&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">49.00</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;max_spend_per_session&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.00</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;soft_gate_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.80</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;hard_gate_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.00</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;model_limits&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;cost_rates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;current_usage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;period_cost&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">23.47</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;period_tokens_total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">51720</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;period_tokens_by_model&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;period_cost_by_model&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;billing_period&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-05-01T00:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;end&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-06-01T00:00:00Z&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>paygent_user_id</code> is the backend's UUID for the user. The SDK stores it on disk and uses it to detect "user deleted and re-created" scenarios.</p>
+<p><strong>Errors:</strong> <code>404 Not Found</code> if user doesn't exist.</p>
+<hr />
+<h3 id="get-usersuser_idusage">GET /users/{user_id}/usage</h3>
+<p>Detailed usage data for a user.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:3"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><input id="__tabbed_9_3" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Python</label><label for="__tabbed_9_2">curl</label><label for="__tabbed_9_3">TypeScript</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">r</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;https://api.paygent.to/api/v1/users/user_123/usage&quot;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">api_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;period&quot;</span><span class="p">:</span> <span class="s2">&quot;current_period&quot;</span><span class="p">,</span> <span class="s2">&quot;breakdown&quot;</span><span class="p">:</span> <span class="s2">&quot;model&quot;</span><span class="p">},</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="s2">&quot;https://api.paygent.to/api/v1/users/user_123/usage?period=current_period&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer pg_live_...&quot;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1">// Coming soon</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><strong>Query parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Default</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>period</code></td>
+<td><code>current_period</code></td>
+<td><code>current_period</code>, <code>current_month</code>, <code>YYYY-MM</code></td>
+</tr>
+<tr>
+<td><code>breakdown</code></td>
+<td><code>model</code></td>
+<td><code>model</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response (200):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user_123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;period&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;current_period&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;total_cost&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">23.47</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;total_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">51720</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tokens_by_model&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;gpt-4o&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">31200</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;gpt-4o-mini&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12100</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;cost_by_model&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;gpt-4o&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">18.20</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;gpt-4o-mini&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.95</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;tool_calls_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Errors:</strong> <code>404 Not Found</code> if user doesn't exist.</p>
+<hr />
+<h2 id="events">Events</h2>
+<h3 id="post-eventsbatch">POST /events/batch</h3>
+<p>Ingest a batch of usage events from the SDK. The SDK calls this in the background; you typically don't call it directly. The endpoint is <strong>idempotent</strong> — duplicate <code>id</code>s are silently counted as duplicates rather than rejected.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:3"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><input id="__tabbed_10_3" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Python</label><label for="__tabbed_10_2">curl</label><label for="__tabbed_10_3">TypeScript</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">events</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;abc-1234&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;user_123&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;session_id&quot;</span><span class="p">:</span> <span class="s2">&quot;sess-9876&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-05-06T14:32:18Z&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;gpt-4o-mini&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;input_tokens&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;output_tokens&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="s2">&quot;total_tokens&quot;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+        <span class="s2">&quot;cost_tokens&quot;</span><span class="p">:</span> <span class="mf">0.000045</span><span class="p">,</span>
+        <span class="s2">&quot;cost_total&quot;</span><span class="p">:</span> <span class="mf">0.000045</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">]</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s2">&quot;https://api.paygent.to/api/v1/events/batch&quot;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">api_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span>
+    <span class="n">json</span><span class="o">=</span><span class="n">events</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://api.paygent.to/api/v1/events/batch<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer pg_live_...&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;[{&quot;id&quot;: &quot;...&quot;, &quot;user_id&quot;: &quot;user_123&quot;, ...}]&#39;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1">// Coming soon</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><strong>Request body:</strong> JSON array (not wrapped in an object) of <code>UsageEventSchema</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>string (UUID)</td>
+<td>yes — idempotency key</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>session_id</code></td>
+<td>string &#124; null</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>timestamp</code></td>
+<td>ISO datetime</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td>string &#124; null</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>input_tokens</code></td>
+<td>int</td>
+<td>default 0</td>
+</tr>
+<tr>
+<td><code>output_tokens</code></td>
+<td>int</td>
+<td>default 0</td>
+</tr>
+<tr>
+<td><code>total_tokens</code></td>
+<td>int</td>
+<td>default 0</td>
+</tr>
+<tr>
+<td><code>tool_calls</code></td>
+<td>array of strings</td>
+<td>default <code>[]</code></td>
+</tr>
+<tr>
+<td><code>cost_tokens</code></td>
+<td>float</td>
+<td>default 0.0</td>
+</tr>
+<tr>
+<td><code>cost_tools</code></td>
+<td>float</td>
+<td>default 0.0</td>
+</tr>
+<tr>
+<td><code>cost_total</code></td>
+<td>float</td>
+<td>default 0.0</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td>dict</td>
+<td>default <code>{}</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response (200):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;accepted&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;duplicates&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="gate-events-audit-trail">Gate events (audit trail)</h2>
+<h3 id="post-gate-eventsbatch">POST /gate-events/batch</h3>
+<p>Ingest soft-/hard-gate decisions from the SDK. Used by the SDK's background sync; rarely called directly. Idempotent.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:3"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><input id="__tabbed_11_3" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Python</label><label for="__tabbed_11_2">curl</label><label for="__tabbed_11_3">TypeScript</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">gate_events</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;abc-1234&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;user_123&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-05-06T14:32:18Z&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;hard_gate&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;gate_reason&quot;</span><span class="p">:</span> <span class="s2">&quot;total_spend&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;usage_pct&quot;</span><span class="p">:</span> <span class="mf">1.02</span><span class="p">,</span>
+        <span class="s2">&quot;current_value&quot;</span><span class="p">:</span> <span class="mf">49.91</span><span class="p">,</span>
+        <span class="s2">&quot;limit_value&quot;</span><span class="p">:</span> <span class="mf">49.00</span><span class="p">,</span>
+        <span class="s2">&quot;blocked&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Spend limit reached&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">]</span>
+<span class="n">httpx</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s2">&quot;https://api.paygent.to/api/v1/gate-events/batch&quot;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">api_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span>
+    <span class="n">json</span><span class="o">=</span><span class="n">gate_events</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://api.paygent.to/api/v1/gate-events/batch<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer pg_live_...&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;[{&quot;id&quot;: &quot;...&quot;, &quot;user_id&quot;: &quot;user_123&quot;, ...}]&#39;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1">// Coming soon</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><strong>Request body:</strong> array of <code>GateEventSchema</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID string</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td>string</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>paygent_user_id</code></td>
+<td>string &#124; null</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>session_id</code></td>
+<td>string &#124; null</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>timestamp</code></td>
+<td>ISO datetime</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>soft_gate</code> &#124; <code>hard_gate</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>gate_reason</code></td>
+<td>string</td>
+<td>yes — <code>total_spend</code>, <code>session_spend</code>, or <code>model_limit:&lt;model&gt;</code></td>
+</tr>
+<tr>
+<td><code>usage_pct</code></td>
+<td>float</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>current_value</code></td>
+<td>float</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>limit_value</code></td>
+<td>float</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td>string &#124; null</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>blocked</code></td>
+<td>bool</td>
+<td>default false</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>string &#124; null</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td>dict</td>
+<td>default <code>{}</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response (200):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">&quot;accepted&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;duplicates&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="get-usersuser_idgate-events">GET /users/{user_id}/gate-events</h3>
+<p>Query gate events for a single user. Newest-first, cursor-paginated.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:3"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><input id="__tabbed_12_3" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Python</label><label for="__tabbed_12_2">curl</label><label for="__tabbed_12_3">TypeScript</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">r</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;https://api.paygent.to/api/v1/users/user_123/gate-events&quot;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">api_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;hard_gate&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;blocked_only&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;since&quot;</span><span class="p">:</span> <span class="s2">&quot;2026-05-01T00:00:00Z&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;limit&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="s2">&quot;https://api.paygent.to/api/v1/users/user_123/gate-events?status=hard_gate&amp;blocked_only=true&amp;limit=100&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer pg_live_...&quot;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1">// Coming soon</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><strong>Query parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>status</code></td>
+<td>string</td>
+<td>—</td>
+<td><code>soft_gate</code> or <code>hard_gate</code>.</td>
+</tr>
+<tr>
+<td><code>gate_reason</code></td>
+<td>string</td>
+<td>—</td>
+<td><code>total_spend</code>, <code>session_spend</code>, <code>model_limit:&lt;model&gt;</code>.</td>
+</tr>
+<tr>
+<td><code>blocked_only</code></td>
+<td>bool</td>
+<td>false</td>
+<td>Only events that actually blocked (<code>blocked=true</code>).</td>
+</tr>
+<tr>
+<td><code>since</code></td>
+<td>ISO datetime</td>
+<td>—</td>
+<td>Inclusive lower bound.</td>
+</tr>
+<tr>
+<td><code>until</code></td>
+<td>ISO datetime</td>
+<td>—</td>
+<td>Exclusive upper bound.</td>
+</tr>
+<tr>
+<td><code>cursor</code></td>
+<td>string</td>
+<td>—</td>
+<td>From previous response's <code>next_cursor</code>.</td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>int (1–500)</td>
+<td>100</td>
+<td>Page size.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response (200):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user_123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;events&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;abc-1234&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user_123&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;session_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sess-9876&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-05-06T14:32:18Z&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hard_gate&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;gate_reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;total_spend&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;usage_pct&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.02</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;current_value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">49.91</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;limit_value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">49.00</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;blocked&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Spend limit reached&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;next_cursor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eyJpZCI6ImFiYy0xMjM0In0=&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>next_cursor</code> is non-null when more pages exist. Pass it as <code>cursor</code> on the next call.</p>
+<hr />
+<h2 id="health">Health</h2>
+<h3 id="get-health">GET /health</h3>
+<p>Liveness check. <strong>No authentication required.</strong></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:3"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><input id="__tabbed_13_3" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Python</label><label for="__tabbed_13_2">curl</label><label for="__tabbed_13_3">TypeScript</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">r</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://api.paygent.to/api/v1/health&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>https://api.paygent.to/api/v1/health
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1">// Coming soon</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><strong>Response (200):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ok&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;connected&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>status</code> is <code>degraded</code> if the database isn't reachable.</p>
+<hr />
+<h2 id="error-responses">Error responses</h2>
+<p>All errors follow FastAPI's default shape:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;detail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User &#39;user_123&#39; not found.&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Common status codes:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>When</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>400 Bad Request</code></td>
+<td>Invalid request body or query params</td>
+</tr>
+<tr>
+<td><code>401 Unauthorized</code></td>
+<td>Missing or invalid <code>Authorization</code> header</td>
+</tr>
+<tr>
+<td><code>403 Forbidden</code></td>
+<td>API key doesn't grant access to this resource</td>
+</tr>
+<tr>
+<td><code>404 Not Found</code></td>
+<td>User / plan / product doesn't exist</td>
+</tr>
+<tr>
+<td><code>409 Conflict</code></td>
+<td>Resource already exists (e.g. duplicate <code>external_user_id</code>)</td>
+</tr>
+<tr>
+<td><code>422 Unprocessable Entity</code></td>
+<td>Body validation failed (Pydantic errors include a list of issues)</td>
+</tr>
+<tr>
+<td><code>500 Internal Server Error</code></td>
+<td>Backend bug or transient failure</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="next-steps">Next steps</h2>
+<ul>
+<li><a href="../sdk-reference/">SDK Reference</a> — the Python SDK calls these endpoints for you</li>
+<li><a href="../../getting-started/configure-first-plan/">Configure your first plan</a> — designing the plan bodies</li>
+<li><a href="../../getting-started/assign-users-to-plans/">Assign users to plans</a> — the user/subscription flow in practice</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.indexes", "navigation.expand", "navigation.top", "content.code.copy", "content.code.annotate", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

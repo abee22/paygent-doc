@@ -1,0 +1,1601 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="From cost visibility to cost control — in one SDK.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.paygent.to/getting-started/configure-first-plan/">
+      
+      
+        <link rel="prev" href="../quickstart/">
+      
+      
+        <link rel="next" href="../assign-users-to-plans/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Configure your first Plan - Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#configure-your-first-plan" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Docs" class="md-header__button md-logo" aria-label="Docs" data-md-component="logo">
+      
+  <img src="../../assets/paygent-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Configure your first Plan
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abee22/paygent" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Docs" class="md-nav__button md-logo" aria-label="Docs" data-md-component="logo">
+      
+  <img src="../../assets/paygent-logo.png" alt="logo">
+
+    </a>
+    Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abee22/paygent" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Introduction
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/what-is-paygent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What is Paygent?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/who-should-use-paygent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Who should use Paygent?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/why-ai-cost-control-is-different/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why AI cost control is different
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/plans-and-usage-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plans and Usage Events
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configure your first Plan
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configure your first Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#decide-your-tiers-before-writing-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decide your tiers before writing config
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Decide your tiers before writing config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-whats-the-worst-case-dollar-cost-you-can-absorb-on-a-single-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What's the worst-case dollar cost you can absorb on a single user?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-which-models-should-this-tier-have-access-to-and-how-much" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Which models should this tier have access to, and how much?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-whats-the-longest-single-conversation-you-want-to-permit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. What's the longest single conversation you want to permit?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-when-should-soft-warnings-fire" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. When should soft warnings fire?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-a-realistic-two-tier-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build a realistic two-tier setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-rates-are-yours-not-openais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost rates are yours, not OpenAI's
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submit-your-plans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submit your plans
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-with-get-plans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify with GET /plans
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-a-plan-as-you-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update a plan as you learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#freemium-with-locked-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Freemium with locked models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tiered-quotas-at-the-same-dollar-cap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tiered quotas at the same dollar cap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-session-caps-for-high-stakes-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-session caps for high-stakes products
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-rates-for-cost-pass-through" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom rates for cost pass-through
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assign-users-to-plans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assign users to plans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cost-guardrails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cost Guardrails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../verify-its-working/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verify it's working
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/callbacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Callbacks & Events
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LangChain & CrewAI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/streaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Streaming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/sdk-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDK API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#decide-your-tiers-before-writing-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decide your tiers before writing config
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Decide your tiers before writing config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-whats-the-worst-case-dollar-cost-you-can-absorb-on-a-single-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What's the worst-case dollar cost you can absorb on a single user?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-which-models-should-this-tier-have-access-to-and-how-much" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Which models should this tier have access to, and how much?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-whats-the-longest-single-conversation-you-want-to-permit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. What's the longest single conversation you want to permit?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-when-should-soft-warnings-fire" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. When should soft warnings fire?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-a-realistic-two-tier-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build a realistic two-tier setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-rates-are-yours-not-openais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost rates are yours, not OpenAI's
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submit-your-plans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submit your plans
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-with-get-plans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify with GET /plans
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-a-plan-as-you-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update a plan as you learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#freemium-with-locked-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Freemium with locked models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tiered-quotas-at-the-same-dollar-cap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tiered quotas at the same dollar cap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-session-caps-for-high-stakes-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-session caps for high-stakes products
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-rates-for-cost-pass-through" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom rates for cost pass-through
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="configure-your-first-plan">Configure your first plan</h1>
+<p><em>Design realistic plan tiers for your product, submit them via the API, and update them as you learn.</em></p>
+<p>Plans encode the economics of your product. This guide walks through designing a realistic tiered setup, submitting it via the API, and updating it as you learn.</p>
+<h2 id="decide-your-tiers-before-writing-config">Decide your tiers before writing config</h2>
+<p>Before opening an API call, answer four questions for each tier you plan to offer.</p>
+<h3 id="1-whats-the-worst-case-dollar-cost-you-can-absorb-on-a-single-user">1. What's the worst-case dollar cost you can absorb on a single user?</h3>
+<p>This is your <code>max_spend_per_period</code>. Be honest about what would still be profitable. If a $49 plan needs to keep margin even on a heavy user, the cap might be $20–25, not $49.</p>
+<h3 id="2-which-models-should-this-tier-have-access-to-and-how-much">2. Which models should this tier have access to, and how much?</h3>
+<p>This is your <code>model_limits</code>. Free tier might only get GPT-4o-mini. Pro tier gets GPT-4o-mini + GPT-4o with separate quotas. Enterprise gets everything. Per-model quotas are the lever that lets the same dollar cap mean very different things across tiers.</p>
+<h3 id="3-whats-the-longest-single-conversation-you-want-to-permit">3. What's the longest single conversation you want to permit?</h3>
+<p>This is your <code>max_spend_per_session</code>. Caps a runaway agent loop or one bad prompt from burning a user's whole monthly allocation in one go. Common rule of thumb: 10–20% of <code>max_spend_per_period</code>.</p>
+<h3 id="4-when-should-soft-warnings-fire">4. When should soft warnings fire?</h3>
+<p>This is your <code>soft_gate_at</code> (default 0.80, fires at 80%). Earlier means more time to act — prompt an upgrade, switch models, warn the user. Later means fewer warnings and tighter enforcement.</p>
+<h2 id="build-a-realistic-two-tier-setup">Build a realistic two-tier setup</h2>
+<p>Here's a complete config for a chatbot product with Free and Pro tiers, with reasoning for each number.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;soft_gate_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.80</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;hard_gate_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.00</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;plans&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;free&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;max_spend_per_period&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.00</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;max_spend_per_session&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.50</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;model_limits&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;gpt-4o-mini&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;max_tokens_per_period&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;cost_rates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;gpt-4o-mini&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00015</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0006</span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;session_timeout_minutes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">30.0</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pro&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;max_spend_per_period&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">49.00</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;max_spend_per_session&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.00</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;model_limits&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;gpt-4o&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;max_tokens_per_period&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;gpt-4o-mini&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;max_tokens_per_period&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200000</span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;cost_rates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;gpt-4o&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0025</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;gpt-4o-mini&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00015</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0006</span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;session_timeout_minutes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">30.0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The reasoning behind each tier:</p>
+<p><strong>Free</strong> — capped at $5/period because that's the most you're willing to lose on a free user. Locked to <code>gpt-4o-mini</code> only (no GPT-4o access at all — leaving the model out of <code>model_limits</code> and <code>cost_rates</code> means calls to it won't be metered or allowed against this plan's tokens). 10K-token quota gives the user a real taste of the product without burning through the cap. Per-session cap of $0.50 stops a long conversation from eating the entire monthly allocation.</p>
+<p><strong>Pro</strong> — $49/period reflects what you charge plus your margin. Two models with separate quotas: 50K GPT-4o tokens <em>and</em> 200K GPT-4o-mini tokens. A user can lean on the cheap model for routine tasks and the expensive one for the hard ones, without one starving the other. Per-session cap of $5 protects against runaway loops while still allowing genuinely complex multi-call sessions.</p>
+<p>Both tiers use the top-level <code>soft_gate_at</code> and <code>hard_gate_at</code> (80% / 100%). You could override either per-plan if you wanted Free users to see warnings earlier (say, at 60%) — but consistent thresholds across tiers make the user experience predictable.</p>
+<h2 id="cost-rates-are-yours-not-openais">Cost rates are yours, not OpenAI's</h2>
+<p>The numbers in <code>cost_rates</code> are the prices <em>you</em> charge against your plan's dollar cap — they don't have to match what OpenAI bills you.</p>
+<p>Most teams use one of three approaches:</p>
+<ul>
+<li><strong>Pass-through</strong> — copy OpenAI's published rates verbatim (what's shown above). Simplest, lowest friction, smallest margin protection.</li>
+<li><strong>Marked up</strong> — multiply OpenAI's rates by 1.5–3x. Builds margin headroom into the cap itself, so a "$49 plan" gives the user roughly $30 of OpenAI compute and absorbs the rest.</li>
+<li><strong>Flat tier rates</strong> — round numbers (e.g., $0.01/1K tokens regardless of model). Easier to communicate to users; less precise about real costs.</li>
+</ul>
+<p>You can always update <code>cost_rates</code> later as OpenAI changes their pricing or as you learn what your users actually consume.</p>
+<h2 id="submit-your-plans">Submit your plans</h2>
+<p>Send the config to the Paygent API:</p>
+<p><strong>curl</strong></p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://api.paygent.to/api/v1/config/plans<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer pg_live_...&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span>@plans.json
+</code></pre></div>
+<p><strong>Python (httpx)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">httpx</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;plans.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">resp</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s2">&quot;https://api.paygent.to/api/v1/config/plans&quot;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer pg_live_...&quot;</span><span class="p">},</span>
+    <span class="n">content</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">plans</span> <span class="o">=</span> <span class="p">{</span><span class="n">p</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]:</span> <span class="n">p</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;plans&quot;</span><span class="p">]}</span>
+<span class="c1"># {&#39;free&#39;: &#39;...&#39;, &#39;pro&#39;: &#39;...&#39;}</span>
+</code></pre></div>
+<p>The response includes each plan's UUID — save these, you'll need them when assigning users.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;plans&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;01HF...&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;free&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;max_spend_per_period&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.00</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;01HG...&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pro&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;max_spend_per_period&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">49.00</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;duplicates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>If you re-run this call, plans with names that already exist are silently skipped and listed under <code>duplicates</code>. To change an existing plan, use <code>PATCH</code> (next section), not another <code>POST</code>.</p>
+</blockquote>
+<h2 id="verify-with-get-plans">Verify with GET /plans</h2>
+<p>Confirm what's actually configured:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>https://api.paygent.to/api/v1/config/plans<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer pg_live_...&quot;</span>
+</code></pre></div>
+<p>Returns the full list of plans for your product, including all defaults that were filled in (e.g., <code>soft_gate_at: 0.80</code> if you didn't override it).</p>
+<h2 id="update-a-plan-as-you-learn">Update a plan as you learn</h2>
+<p>Once a plan is in production, you'll find numbers you want to tune — Free users hitting the limit too quickly, Pro users not getting enough GPT-4o, costs needing markup. Use <code>PATCH</code> to update one field at a time without re-sending the whole plan:</p>
+<p><strong>curl</strong></p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>PATCH<span class="w"> </span>https://api.paygent.to/api/v1/config/plans/PRO_PLAN_UUID<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer pg_live_...&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;model_limits&quot;: {</span>
+<span class="s1">      &quot;gpt-4o&quot;: {&quot;max_tokens_per_period&quot;: 75000},</span>
+<span class="s1">      &quot;gpt-4o-mini&quot;: {&quot;max_tokens_per_period&quot;: 300000}</span>
+<span class="s1">    }</span>
+<span class="s1">  }&#39;</span>
+</code></pre></div>
+<p><strong>Python (httpx)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">httpx</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;https://api.paygent.to/api/v1/config/plans/</span><span class="si">{</span><span class="n">plans</span><span class="p">[</span><span class="s1">&#39;pro&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer pg_live_...&quot;</span><span class="p">},</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;model_limits&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;gpt-4o&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;max_tokens_per_period&quot;</span><span class="p">:</span> <span class="mi">75000</span><span class="p">},</span>
+            <span class="s2">&quot;gpt-4o-mini&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;max_tokens_per_period&quot;</span><span class="p">:</span> <span class="mi">300000</span><span class="p">},</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Only the fields you include are updated. Everything else stays as it was. The change takes effect on the next session bootstrap for users on that plan (typically within seconds).</p>
+<h2 id="common-patterns">Common patterns</h2>
+<h3 id="freemium-with-locked-models">Freemium with locked models</h3>
+<p>Free tier has a tiny dollar cap and only cheap-model access. Paying tiers unlock more models. Users hit the gate naturally and self-serve into a paid plan.</p>
+<h3 id="tiered-quotas-at-the-same-dollar-cap">Tiered quotas at the same dollar cap</h3>
+<p>Two plans with the same <code>max_spend_per_period</code> but different <code>model_limits</code> — Pro gets premium models, Standard gets only mini. Same price, different capabilities.</p>
+<h3 id="per-session-caps-for-high-stakes-products">Per-session caps for high-stakes products</h3>
+<p>For document processing or research agents where one task can spiral, set <code>max_spend_per_session</code> aggressively (e.g., $1–2) regardless of plan. Prevents single-task disasters.</p>
+<h3 id="custom-rates-for-cost-pass-through">Custom rates for cost pass-through</h3>
+<p>If you want users to see OpenAI's actual rates instead of marked-up ones, set <code>cost_rates</code> to OpenAI's published numbers. Combined with a thin <code>max_spend_per_period</code>, this becomes a "metered with a ceiling" experience.</p>
+<h2 id="whats-next">What's next</h2>
+<ul>
+<li><strong><a href="../assign-users-to-plans/">Assign users to plans</a></strong> — register end users with Paygent and put them on the plans you just created</li>
+<li><strong><a href="../../reference/api-reference/#post-configplans">Backend API reference</a></strong> — every field on <code>POST /config/plans</code> including <code>default_cost_rate</code>, <code>pre_call_estimate</code>, session timeouts, and tool costs</li>
+<li><strong><a href="../../integration/callbacks/">Callbacks and events</a></strong> — react to soft warnings and hard blocks from your application code</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.indexes", "navigation.expand", "navigation.top", "content.code.copy", "content.code.annotate", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,381 @@
+/* ===========================================================================
+ * Paygent docs — Mintlify-inspired theme on top of Material for MkDocs.
+ *
+ * What this stylesheet does:
+ *   - Switches the palette to a dark-green primary on a warm off-white bg
+ *   - Restyles the left sidebar so section labels are title-case (not caps)
+ *     and the active page sits in a rounded green pill
+ *   - Restores the right-hand "On this page" TOC styling
+ *   - Softens the header (no color tint, subtle bottom border)
+ *   - Bumps border-radius for code blocks, admonitions, and tabs
+ *
+ * Most of the work is reassigning Material's CSS custom properties (the
+ * `--md-*` variables) so the underlying theme machinery picks up the new
+ * colors automatically — keeps the diff small and dark-mode friendly.
+ * =========================================================================== */
+
+/* ---------------------------------------------------------------------------
+ * Color palette
+ * ------------------------------------------------------------------------- */
+:root {
+  --md-primary-fg-color:           #0d4f3c;     /* dark green */
+  --md-primary-fg-color--light:    #156a51;
+  --md-primary-fg-color--dark:     #093a2c;
+  --md-accent-fg-color:            #0d4f3c;
+  --md-accent-fg-color--transparent: rgba(13, 79, 60, 0.08);
+
+  /* Header is white, not the primary tint */
+  --md-primary-bg-color:           #ffffff;
+  --md-primary-bg-color--light:    rgba(0, 0, 0, 0.7);
+
+  /* Soft cream page background */
+  --md-default-bg-color:           #fdfcf8;
+  --md-default-bg-color--light:    rgba(0, 0, 0, 0.04);
+
+  /* Body text */
+  --md-default-fg-color:           #1a1a1a;
+  --md-default-fg-color--light:    #4a4a4a;
+  --md-default-fg-color--lighter:  #888;
+  --md-default-fg-color--lightest: rgba(0, 0, 0, 0.04);
+
+  /* Code block tint — slightly warmer than default */
+  --md-code-bg-color:              #f6f4ec;
+  --md-code-fg-color:              #1f1f1f;
+
+  /* Active-page pill */
+  --pg-active-bg:                  rgba(13, 79, 60, 0.08);
+  --pg-active-fg:                  #0d4f3c;
+
+  /* Soft border for cards / sections */
+  --pg-border:                     rgba(0, 0, 0, 0.08);
+}
+
+/* ---------------------------------------------------------------------------
+ * Header — clean white with subtle bottom border, no color tint
+ * ------------------------------------------------------------------------- */
+.md-header {
+  background-color: #ffffff;
+  color: var(--md-default-fg-color);
+  border-bottom: 1px solid var(--pg-border);
+  box-shadow: none;
+}
+
+.md-header__title {
+  color: var(--md-default-fg-color);
+  font-weight: 600;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  /* filter: brightness(0);  logo in black for the light header */
+  height: 3rem;  /* adjust as needed */
+  width: auto;
+}
+
+.md-search__form {
+  background-color: var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+}
+
+.md-search__input::placeholder {
+  color: var(--md-default-fg-color--lighter);
+}
+
+/* ---------------------------------------------------------------------------
+ * Layout — wider sidebar, more horizontal real estate
+ * ------------------------------------------------------------------------- */
+.md-grid {
+  max-width: 92rem;
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    width: 16rem;
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    width: 16rem;
+  }
+
+  .md-sidebar--secondary {
+    width: 13rem;
+  }
+
+  .md-content {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+/* Page background takes the cream tint */
+body,
+.md-main,
+.md-container {
+  background-color: var(--md-default-bg-color);
+}
+
+/* ---------------------------------------------------------------------------
+ * Left sidebar — section labels (Getting Started, Configuration, …)
+ *
+ * Mintlify look: title case, slightly bolder, NOT all-caps, with normal
+ * spacing.  These are the parent items that hold a children list.
+ * ------------------------------------------------------------------------- */
+.md-nav--primary > .md-nav__list > .md-nav__item--nested > .md-nav__link {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--md-default-fg-color);
+  margin-top: 1.0rem;
+  margin-bottom: 0.25rem;
+  padding-left: 0.5rem;
+}
+
+.md-nav--primary > .md-nav__list > .md-nav__item--nested:first-child > .md-nav__link {
+  margin-top: 0.4rem;
+}
+
+/* Hover on group label — barely lift, no fill */
+.md-nav--primary > .md-nav__list > .md-nav__item--nested > .md-nav__link:hover {
+  background: transparent;
+  color: var(--md-default-fg-color);
+}
+
+/* ---------------------------------------------------------------------------
+ * Left sidebar — page links (Quickstart, Plans & Limits, …)
+ *
+ * Mintlify look: regular weight, slightly muted color, rounded pill on
+ * hover, full green pill when active.
+ * ------------------------------------------------------------------------- */
+.md-nav--primary .md-nav__item:not(.md-nav__item--nested) > .md-nav__link {
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--md-default-fg-color--light);
+  padding: 0.4rem 0.75rem;
+  margin: 0.05rem 0;
+  border-radius: 8px;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+/* Hover affordance — light gray pill */
+.md-nav--primary .md-nav__item:not(.md-nav__item--nested) > .md-nav__link:hover {
+  background-color: var(--md-default-fg-color--lightest);
+  color: var(--md-default-fg-color);
+}
+
+/* Active page — green-tinted pill, bold green text */
+.md-nav__link--active,
+.md-nav--primary .md-nav__item:not(.md-nav__item--nested) > .md-nav__link--active {
+  background-color: var(--pg-active-bg) !important;
+  color: var(--pg-active-fg) !important;
+  font-weight: 600;
+}
+
+/* Indent children under nested groups so they read as a sub-list */
+.md-nav--primary .md-nav__item--nested .md-nav__list {
+  padding-left: 0;
+}
+
+/* Hide the chevron icon next to nested items — Mintlify auto-expands */
+.md-nav--primary > .md-nav__list > .md-nav__item--nested > .md-nav__link .md-nav__icon {
+  display: none;
+}
+
+/* ---------------------------------------------------------------------------
+ * Right sidebar — "On this page" TOC
+ *
+ * Mintlify look: muted gray for inactive items, bold black for active,
+ * a subtle vertical bar on the active item.
+ * ------------------------------------------------------------------------- */
+.md-sidebar--secondary .md-nav__title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--md-default-fg-color--lighter);
+  padding-left: 0.5rem;
+}
+
+.md-sidebar--secondary .md-nav__link {
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--lighter);
+  padding: 0.25rem 0.75rem;
+  border-left: 2px solid transparent;
+  border-radius: 0;
+  margin: 0;
+  transition: color 120ms ease, border-color 120ms ease;
+}
+
+.md-sidebar--secondary .md-nav__link:hover {
+  color: var(--md-default-fg-color);
+  background: transparent;
+}
+
+.md-sidebar--secondary .md-nav__link--active {
+  color: var(--md-default-fg-color) !important;
+  background: transparent !important;
+  font-weight: 600;
+  border-left-color: var(--md-primary-fg-color);
+}
+
+/* ---------------------------------------------------------------------------
+ * Main content — softer typography, more breathing room
+ * ------------------------------------------------------------------------- */
+
+.md-main__inner {
+  margin-top: 0;
+}
+
+.md-nav__title {
+  display: none;
+}
+
+.md-typeset {
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+.md-typeset h1 {
+  color: #1a1a1a;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.md-typeset h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.md-typeset h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1.75rem;
+}
+
+/* Anchor link icon next to headings — subtle */
+.md-typeset .headerlink {
+  color: var(--md-default-fg-color--lighter);
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+
+.md-typeset h1:hover .headerlink,
+.md-typeset h2:hover .headerlink,
+.md-typeset h3:hover .headerlink,
+.md-typeset h4:hover .headerlink {
+  opacity: 1;
+}
+
+/* ---------------------------------------------------------------------------
+ * Code blocks, admonitions, tabs — softer corners, lighter styling
+ * ------------------------------------------------------------------------- */
+.md-typeset pre,
+.md-typeset code,
+.md-typeset .highlight {
+  border-radius: 8px;
+}
+
+.md-typeset code {
+  font-size: 0.82em;
+  padding: 0.15em 0.4em;
+  background-color: var(--md-code-bg-color);
+}
+
+.md-typeset pre > code {
+  border-radius: 8px;
+  padding: 0.9em 1em;
+}
+
+/* Admonitions (note/tip/warning) — flatter, softer */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 8px;
+  border-left-width: 3px;
+  font-size: 0.82rem;
+  box-shadow: none;
+}
+
+/* Tabbed code blocks (=== "Python" / === "TypeScript") */
+.md-typeset .tabbed-set {
+  border-radius: 8px;
+}
+
+.md-typeset .tabbed-labels > label {
+  font-weight: 500;
+  font-size: 0.78rem;
+}
+
+/* Tables — subtle borders matching the rest */
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  border: 1px solid var(--pg-border);
+  overflow: hidden;
+  font-size: 0.8rem;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--md-default-fg-color--lightest);
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------------------------
+ * Buttons & links — green primary, no underline
+ * ------------------------------------------------------------------------- */
+.md-typeset a {
+  color: var(--md-primary-fg-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 120ms ease;
+}
+
+.md-typeset a:hover {
+  color: var(--md-primary-fg-color--light);
+  border-bottom-color: var(--md-primary-fg-color);
+}
+
+/* "Edit on GitHub" / source link in the header */
+.md-content__button {
+  color: var(--md-default-fg-color--lighter);
+}
+
+.md-content__button:hover {
+  color: var(--md-default-fg-color);
+}
+
+/* ---------------------------------------------------------------------------
+ * Footer — minimal
+ * ------------------------------------------------------------------------- */
+.md-footer {
+  background-color: var(--md-default-bg-color);
+  color: var(--md-default-fg-color--light);
+  border-top: 1px solid var(--pg-border);
+}
+
+.md-footer-meta {
+  background-color: transparent;
+}
+
+/* ---------------------------------------------------------------------------
+ * Misc polish
+ * ------------------------------------------------------------------------- */
+
+/* Removes the default "section label" cap-style from primary nav root. */
+.md-nav__title[for="__drawer"] {
+  background: transparent;
+  color: var(--md-default-fg-color);
+  font-weight: 600;
+}
+
+/* Smoother focus rings */
+*:focus-visible {
+  outline: 2px solid var(--md-primary-fg-color);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
